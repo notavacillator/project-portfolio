@@ -11,6 +11,7 @@ import { FaGithubSquare } from 'react-icons/fa';
 function Intro() {  
   return (
     <section className='mb-28 max-w-[50rem] text-center sm:mb-0'>
+      {/* PROFILE PICTURE SECTION */}
         <div className='flex items-center justify-center'>
             <div className='relative'>
               <motion.div
@@ -42,7 +43,8 @@ function Intro() {
             </div>
         </div>
 
-        <motion.p className='mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-3xl'
+      {/* INTRO HEADING SECTION  */}
+        <motion.h1 className='mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-3xl'
          initial={{y: 100, opacity: 0}} 
          animate={{y: 0, opacity: 1}}>
           <span className="font-bold">Hello, I'm Ricardo.</span> I'm a{" "}
@@ -50,8 +52,9 @@ function Intro() {
           <span className="font-bold">8 years</span> of experience. I enjoy
           building <span className="italic">sites & apps</span>. My focus is{" "}
           <span className="underline">React (Next.js)</span>.
-        </motion.p>
+        </motion.h1>
 
+      {/* LINKS / ANCHOR SECTION */}
         <motion.div className='flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium'
           initial={{y: 100, opacity: 0}} 
           animate={{y: 0, opacity: 1}}
