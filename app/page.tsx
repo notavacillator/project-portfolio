@@ -1,6 +1,10 @@
+import header from '../components/header';
 
 export default function Home() {
   return (
-    <main className=""></main>
-  )
+    <>
+      {/* <header></header> */}
+      <main className=""></main>
+    </>
+    )
 }
