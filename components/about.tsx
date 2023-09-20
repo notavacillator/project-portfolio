@@ -13,7 +13,7 @@ function About() {
             delay: 0.175, 
         }}
     >
-        <SectionHeading > About me</SectionHeading>
+        <SectionHeading >About me</SectionHeading>
         <p className="mb-3">
             After graduating with a degree in{" "}
             <span className="font-medium">Accounting</span>, I decided to pursue my

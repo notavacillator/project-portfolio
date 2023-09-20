@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Aman | Personal portfolio',
+  title: 'Aman | Portfolio',
   description: 'I"m a budding front-end developer with 2 years of JavaScript experience, passionate about crafting engaging user interfaces.',
 }
 
