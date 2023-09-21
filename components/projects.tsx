@@ -5,7 +5,7 @@ import Project from '@/components/project'
 
 function Projects() {
   return (
-    <section>
+    <section id='projects' className='scroll-m-24'>
         <SectionHeading>My Projects</SectionHeading>
         <div>
             {

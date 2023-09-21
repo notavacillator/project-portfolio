@@ -6,12 +6,13 @@ import {motion} from 'framer-motion';
 
 function About() {
   return (
-    <motion.section className='mb-28 max-w-[45rem] text-center leading-8 sm:mb-20'
+    <motion.section className='mb-28 max-w-[45rem] text-center leading-8 sm:mb-20 scroll-m-24'
         initial={{y: 100, opacity: 0}} 
         animate={{y: 0, opacity: 1}}
         transition={{
             delay: 0.175, 
         }}
+        id='about'
     >
         <SectionHeading >About me</SectionHeading>
         <p className="mb-3">
