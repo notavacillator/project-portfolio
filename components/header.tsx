@@ -11,7 +11,7 @@ function Header() {
     // Error in below code as the useContext could return a null value. 
     // const {activeSection, setActiveSection} = useContext(ActiveSectionContext); 
 
-    const {activeSection, setActiveSection} = useActiveSectionContext(); 
+    const {activeSection, setActiveSection, setLastClickTime} = useActiveSectionContext(); 
     
     return (
         <header className='z-[999] relative' >
@@ -39,14 +39,17 @@ function Header() {
                                 <Link 
                                     className = {clsx('flex items-center justify-center px-3 py-3 hover:text-gray-950 transition select-none', 
                                         {
-                                            "text-gray-950" : activeSection === link.name
+                                            "text-gray-950 " : activeSection === link.name
                                         }
                                     )} 
-                                    href = {link.hash} onClick={() => setActiveSection(link.name)}>
+                                    href = {link.hash} onClick={() => {
+                                            setActiveSection(link.name)
+                                            setLastClickTime(Date.now())
+                                        }}>
                                         {link.name}
                                     {
                                         link.name === activeSection && (
-                                            <motion.span className='bg-gray-100 rounded-full absolute inset-0 -z-10'
+                                            <motion.span className='bg-gray-200 rounded-full absolute inset-0 -z-10'
                                                 layoutId='activeSection' 
                                                 transition={{
                                                     type: 'spring',

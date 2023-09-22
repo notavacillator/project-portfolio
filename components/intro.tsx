@@ -1,16 +1,32 @@
 'use client'
 
 import Image from 'next/image'
-import React from 'react'
+import React, {useEffect} from 'react'
 import { motion } from 'framer-motion'; 
 import Link from 'next/link';
 import {BsArrowRight, BsLinkedin} from 'react-icons/bs';
 import {HiDownload} from 'react-icons/hi';
 import { FaGithubSquare } from 'react-icons/fa';
+import { useInView } from 'react-intersection-observer';
+import { useActiveSectionContext } from '@/context/active-section-context';
 
 function Intro() {  
+  const {ref,  inView}= useInView({
+    threshold: 0,
+  }); 
+  const {setActiveSection, lastClickTime} = useActiveSectionContext();
+
+  useEffect(() => {
+    if(inView && Date.now() - lastClickTime > 1000){
+        setActiveSection('Home');
+    }
+    return () => {
+    }
+  }, [inView, setActiveSection, lastClickTime])
+
+
   return (
-    <section id='home' className='mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]'>
+    <section ref ={ref} id='home' className=' mt-10 mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]'>
       {/* PROFILE PICTURE SECTION */}
         <div className='flex items-center justify-center'>
             <div className='relative'>
