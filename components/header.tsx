@@ -1,14 +1,18 @@
 'use client';
 
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'; 
 import { links } from '@/lib/data';
 import Link from 'next/link';
 import clsx from 'clsx';
+import { useActiveSectionContext } from '@/context/active-section-context';
 
 function Header() {
-    const [activeSection, setActiveSection] = useState('Home'); 
+    // Error in below code as the useContext could return a null value. 
+    // const {activeSection, setActiveSection} = useContext(ActiveSectionContext); 
 
+    const {activeSection, setActiveSection} = useActiveSectionContext(); 
+    
     return (
         <header className='z-[999] relative' >
             <motion.div 
@@ -29,7 +33,7 @@ function Header() {
                     sm:flex-nowrap sm:gap-5'>
                     {
                         links.map(link => (
-                            <motion.li className = 'h-3/4 flex items-center justify-center' key ={link.hash}
+                            <motion.li className = 'h-3/4 flex items-center justify-center relative' key ={link.hash}
                                 initial={{y: -100, opacity: 0}} 
                                 animate={{y: 0, opacity: 1}}>
                                 <Link 
@@ -38,9 +42,20 @@ function Header() {
                                             "text-gray-950" : activeSection === link.name
                                         }
                                     )} 
-                                    href = {link.hash}>
+                                    href = {link.hash} onClick={() => setActiveSection(link.name)}>
                                         {link.name}
-                                
+                                    {
+                                        link.name === activeSection && (
+                                            <motion.span className='bg-gray-100 rounded-full absolute inset-0 -z-10'
+                                                layoutId='activeSection' 
+                                                transition={{
+                                                    type: 'spring',
+                                                    stiffness: 300, 
+                                                    damping: 30
+                                                }}>
+                                            </motion.span>
+                                        )
+                                    }
                                 </Link>
                             </motion.li>
                         ))
