@@ -31,8 +31,9 @@ function Project({
             opacity: opacityProgress
         }} 
         className='group relative bg-gray-100 max-w-[42rem] border
-         border-black/5 overflow-hidden sm:pr-8 sm:h-[20rem] mb-3 
-         sm:mb-8 last:mb-0 even:pl-8 hover:bg-gray-200 transition py-4 rounded-lg'>
+         border-black/5 overflow-hidden sm:pr-8 mb-3 sm:h-[20rem]
+         sm:mb-8 last:mb-0 even:sm:pl-8 even:pl-0 hover:bg-gray-200 transition py-4 rounded-lg'
+    >
         <div className='pt-4 pb-8 px-5 sm:pl-10 sm:pr-2 sm:pt-1 
         sm:max-w-[50%] flex flex-col h-full group-even:ml-[18rem]'>
             <h3 className='text-2xl font-semibold'>{title}</h3>
@@ -43,7 +44,7 @@ function Project({
                 ))}
             </ul>
         </div>
-        <Image src={imageUrl} alt='Project I worked on' quality={95} 
+        <Image src={imageUrl} alt='Project I worked on' quality={80} 
         className='absolute top-8 -right-40 w-[28.25rem] 
             rounded-t-lg shadow-2xl group-even:right-[initial] 
             group-even:-left-40  group-hover:scale-105 group-hover:-translate-x-3

@@ -1,11 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import React, {useEffect} from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'; 
 import Link from 'next/link';
-import {BsArrowRight, BsLinkedin} from 'react-icons/bs';
-import {HiDownload} from 'react-icons/hi';
+import { BsArrowRight, BsLinkedin} from 'react-icons/bs';
+import { HiDownload} from 'react-icons/hi';
 import { FaGithubSquare } from 'react-icons/fa';
 import { useSectionInView } from '@/lib/hooks';
 
@@ -16,7 +16,7 @@ function Intro() {
     <section ref ={ref} id='home' className=' mt-2 mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]'>
       {/* PROFILE PICTURE SECTION */}
         <div className='flex items-center justify-center'>
-            <div className='relative'>
+            <div className='relative group'>
               <motion.div
                 initial={{opacity: 0, scale: 0}}
                 animate={{opacity: 1, scale: 1}}
@@ -24,14 +24,15 @@ function Intro() {
               >
                 <Image src = 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80' 
                   alt='profile-pic' 
-                  height="192" 
-                  width="192" 
-                  quality= '95' 
+                  height={192} 
+                  width={204}
+                  quality= {80} 
                   priority={true}
                   className='h-24 w-24 rounded-full object-cover border-[0.35rem] border-collapse border-white shadow-xl select-none '
                 />
               </motion.div>
-              <motion.span className='absolute select-none text-3xl bottom-0 right-0'
+              <motion.span 
+                  className='absolute select-none text-3xl bottom-0 right-0'
                   initial={{opacity: 0, scale: 0}}
                   animate={{opacity: 1, scale: 1}}
                   transition={

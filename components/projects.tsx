@@ -7,11 +7,11 @@ import Project from '@/components/project'
 import { useSectionInView } from '@/lib/hooks'
 
 function Projects() {
-    const {ref} = useSectionInView('Projects', 0.5); 
+    const {ref} = useSectionInView('Projects', 0.1); 
 
     
   return (
-    <section ref={ref} id='projects' className='scroll-m-24'>
+    <section ref={ref} id='projects' className='scroll-m-24 mb-10'>
         <SectionHeading>My Projects</SectionHeading>
         <div>
             {
