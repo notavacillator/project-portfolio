@@ -7,26 +7,13 @@ import Link from 'next/link';
 import {BsArrowRight, BsLinkedin} from 'react-icons/bs';
 import {HiDownload} from 'react-icons/hi';
 import { FaGithubSquare } from 'react-icons/fa';
-import { useInView } from 'react-intersection-observer';
-import { useActiveSectionContext } from '@/context/active-section-context';
+import { useSectionInView } from '@/lib/hooks';
 
 function Intro() {  
-  const {ref,  inView}= useInView({
-    threshold: 0,
-  }); 
-  const {setActiveSection, lastClickTime} = useActiveSectionContext();
-
-  useEffect(() => {
-    if(inView && Date.now() - lastClickTime > 1000){
-        setActiveSection('Home');
-    }
-    return () => {
-    }
-  }, [inView, setActiveSection, lastClickTime])
-
+  const {ref} = useSectionInView('Home', 0.25); 
 
   return (
-    <section ref ={ref} id='home' className=' mt-10 mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]'>
+    <section ref ={ref} id='home' className=' mt-2 mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]'>
       {/* PROFILE PICTURE SECTION */}
         <div className='flex items-center justify-center'>
             <div className='relative'>
@@ -71,14 +58,14 @@ function Intro() {
         </motion.h1>
 
       {/* LINKS / ANCHOR SECTION */}
-        <motion.div className='flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium'
+        <motion.div className='flex flex-col md:flex-row items-center justify-center gap-2 px-4 text-lg font-medium'
           initial={{y: 100, opacity: 0}} 
           animate={{y: 0, opacity: 1}}
           transition={{
             delay: 0.2,
           }}
         >
-          <Link href="#contact" className='group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full
+          <Link href="#contact" className='group bg-gray-900 text-white px-7 py-3 flex flex-nowrap items-center gap-2 rounded-full
               outline-none focus:scale-105 hover:scale-105 hover:shadow-md hover:bg-gray-950 active:scale-95 transition'>
              Contact me here
             <BsArrowRight className='opacity-80 group-hover:translate-x-3 transition'/>
@@ -90,15 +77,17 @@ function Intro() {
             <HiDownload className='group-hover:translate-y-1 transition'/>
           </a>
           
-          <a href="https://linkedin.com/in/aman-bhadauria" target= "_blank" className='group bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full
-            outline-none focus:scale-105 hover:scale-110 hover:shadow-md active:scale-95 transition border border-black/10'>
-            <BsLinkedin className='opacity-70 group-hover:opacity-100 group-hover:text-[#0072b1] transition'/>
-          </a>
+          <div className='flex md:gap-2 sm:gap-3 gap-5'>
+            <a href="https://linkedin.com/in/aman-bhadauria" target= "_blank" className='group bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full
+              outline-none focus:scale-105 hover:scale-110 hover:shadow-md active:scale-95 transition border border-black/10'>
+              <BsLinkedin className='opacity-70 group-hover:opacity-100 group-hover:text-[#0072b1] transition sm:text-2xl text-3xl'/>
+            </a>
 
-          <a href="https://github.com/notavacillator/" target= "_blank" className='group bg-white p-4 text-gray-700 text-[1.35rem] flex items-center gap-2 rounded-full
-            outline-none focus:scale-105 hover:scale-110 hover:shadow-md active:scale-95 transition border border-black/10'>
-            <FaGithubSquare className='opacity-70 group-hover:opacity-100 group-hover:text-black transition'/>
-          </a>
+            <a href="https://github.com/notavacillator/" target= "_blank" className='group bg-white p-4 text-gray-700 text-[1.35rem] flex items-center gap-2 rounded-full
+              outline-none focus:scale-105 hover:scale-110 hover:shadow-md active:scale-95 transition border border-black/10'>
+              <FaGithubSquare className='opacity-70 group-hover:opacity-100 group-hover:text-black transition sm:text-2xl text-3xl'/>
+            </a>
+          </div>
         </motion.div>
     </section>
   )
