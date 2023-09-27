@@ -8,8 +8,10 @@ import { BsArrowRight, BsLinkedin} from 'react-icons/bs';
 import { HiDownload} from 'react-icons/hi';
 import { FaGithubSquare } from 'react-icons/fa';
 import { useSectionInView } from '@/lib/hooks';
+import { useActiveSectionContext } from '@/context/active-section-context';
 
 function Intro() {  
+  const {setActiveSection, setLastClickTime} = useActiveSectionContext(); 
   const {ref} = useSectionInView('Home', 0.25); 
 
   return (
@@ -67,7 +69,11 @@ function Intro() {
           }}
         >
           <Link href="#contact" className='group bg-gray-900 text-white px-7 py-3 flex flex-nowrap items-center gap-2 rounded-full
-              outline-none focus:scale-105 hover:scale-105 hover:shadow-md hover:bg-gray-950 active:scale-95 transition'>
+              outline-none focus:scale-105 hover:scale-105 hover:shadow-md hover:bg-gray-950 active:scale-95 transition'
+              onClick={() => {
+                setActiveSection('Contact')
+                setLastClickTime(Date.now())
+              }}>
              Contact me here
             <BsArrowRight className='opacity-80 group-hover:translate-x-3 transition'/>
           </Link>
