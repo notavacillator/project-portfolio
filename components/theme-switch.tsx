@@ -11,8 +11,10 @@ function ThemeSwitch() {
     const toggleTheme = () => {
         if(theme === 'light'){
             setTheme('dark'); 
+            window.localStorage.setItem('theme', 'dark'); 
         } else{
             setTheme('light'); 
+            window.localStorage.setItem('theme', 'light'); 
         }
     }
 
