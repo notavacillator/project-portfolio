@@ -1,4 +1,4 @@
-// 'use server'
+'use server'
 
 import React from 'react';
 import { getErrorMessage, validateData } from '@/lib/utils';
@@ -26,19 +26,26 @@ export const sendEmail = async(formData : FormData) => {
     }
 
     try {
-      console.log('sender email : ' + senderEmail);
-      console.log('contact message : ' + contactMessage);
+      // console.log('sender email : ' + senderEmail);
+      // console.log('contact message : ' + contactMessage);
       
+      const emailContent = `
+        New message from the contact form:
+        Contact Message: \n${contactMessage}
+        Sender's Email: ${senderEmail}
+      `;
+
       resend.emails.send({
         from: 'Contact form  <onboarding@resend.dev>',
         to: 'bhadauria.shivam15@gmail.com',
         subject: 'Message from contact form of portfolio.',
         // text: contactMessage as string,
         reply_to: senderEmail as string,
-        react : React.createElement(ContactFormEmail, {
-          contactMessage: contactMessage as string, 
-          senderEmail : senderEmail as string, 
-        })
+        text: emailContent as string,
+        // react : React.createElement(ContactFormEmail, {            // CAUSES ERROR SERVER CLIENT 
+        //   contactMessage: contactMessage as string, 
+        //   senderEmail : senderEmail as string, 
+        // })
       });
     } catch (error : unknown) {
       return {
