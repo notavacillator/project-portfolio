@@ -12,9 +12,11 @@ function ThemeSwitch() {
         if(theme === 'light'){
             setTheme('dark'); 
             window.localStorage.setItem('theme', 'dark'); 
+            document.documentElement.classList.add('dark');
         } else{
             setTheme('light'); 
             window.localStorage.setItem('theme', 'light'); 
+            document.documentElement.classList.remove('dark');
         }
     }
 
@@ -22,8 +24,13 @@ function ThemeSwitch() {
         const localTheme = window.localStorage.getItem('theme') as Theme | null ; 
         if(localTheme){
             setTheme(localTheme); 
+            if(localTheme === 'dark'){
+                document.documentElement.classList.add('dark');
+            }
         } else if(window.matchMedia('(prefers-color-scheme : dark)')){
             setTheme('dark')
+            document.documentElement.classList.add('dark');
+
         }
     },[])
 
