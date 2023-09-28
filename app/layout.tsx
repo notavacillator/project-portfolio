@@ -5,6 +5,7 @@ import ActiveSectionContextProvider from '@/context/active-section-context'
 import { Toaster } from 'react-hot-toast'
 import Footer from '@/components/footer'
 import ThemeSwitch from '@/components/theme-switch'
+import ThemeContextProvider from '@/context/theme-context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,32 +26,35 @@ export default function RootLayout({
         <div className='bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]'></div>
         <div className='bg-[#ffcfcf91] absolute -z-10  bottom-[1rem] right-[35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:right-[-33rem] lg:right-[-28rem] xl:right-[-15rem] 2xl:right-[5rem] dark:bg-[#676394]'></div>
         <div className='bg-[#c7bafca1] absolute -z-10  bottom-[25rem] left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]'></div>
-        <ActiveSectionContextProvider>
-          <Header/>
-          {children}
-          <Toaster position='top-right'
-            reverseOrder={false}
-            gutter={8}
-            containerClassName=""
-            containerStyle={{}}
-            toastOptions={{
-              // Define default options
-              className: '',
-              duration: 5000,
-              style: {
-                background: '#363636',
-                color: '#fff',
-              },
-          
-              // Default options for specific types
-              success: {
-                duration: 3000,
-              },
-            }}
-          />
-          <Footer/>
-        </ActiveSectionContextProvider>
-        <ThemeSwitch/>
+
+        <ThemeContextProvider>
+          <ActiveSectionContextProvider>
+            <Header/>
+            {children}
+            <Toaster position='top-right'
+              reverseOrder={false}
+              gutter={8}
+              containerClassName=""
+              containerStyle={{}}
+              toastOptions={{
+                // Define default options
+                className: '',
+                duration: 5000,
+                style: {
+                  background: '#363636',
+                  color: '#fff',
+                },
+            
+                // Default options for specific types
+                success: {
+                  duration: 3000,
+                },
+              }}
+            />
+            <Footer/>
+            <ThemeSwitch/>
+          </ActiveSectionContextProvider>
+        </ThemeContextProvider>
       </body>
     </html>
   )
