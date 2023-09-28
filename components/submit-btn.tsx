@@ -9,7 +9,7 @@ const  { pending } = useFormStatus();
     <button 
     className = 'group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-800 \
      text-white rounded-full outline-none transition-all focus:scale-105 hover:scale-105 hover:shadow-md active:scale-95 hover:bg-gray-950 \
-     disabled:bg-opacity-60 disabled:scale-100' 
+     disabled:bg-opacity-60 disabled:scale-100 dark:bg-white dark:bg-opacity-20' 
     type="submit" disabled={pending}>
         {
             pending ? ( 
