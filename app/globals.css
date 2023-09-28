@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin : 0;
+    padding: 0;  
+}
+
+
+html body{
+    padding: 0;
+    margin: 0;
+    /* overflow-y: inherit; */
+}
+
 html{
+    box-sizing: border-box;
+    overflow-x: hidden;
     --line-color: #e5e7eb;
 }
