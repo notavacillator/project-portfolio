@@ -42,7 +42,7 @@ function Contact() {
                 type="email" required maxLength={100} placeholder = 'Your email' 
                 name='senderEmail'
             />
-            <textarea name ='contactMessage' placeholder = 'Your message' required maxLength={1000} 
+            <textarea name ='contactMessage' placeholder = 'Your message' required maxLength={5000} 
                 className = 'p-3 h-52 my-3 rounded-xl border border-black/10' 
             />
             <button 

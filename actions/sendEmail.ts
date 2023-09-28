@@ -1,17 +1,13 @@
-'use server'
+// 'use server'
+
+import React from 'react';
 import { getErrorMessage, validateData } from '@/lib/utils';
 import { Resend } from 'resend';
 import ContactFormEmail from '@/email/contact-form-email';
-import React from 'react';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// console.log('api key : ' + process.env.RESEND_API_KEY);
-// console.log(resend)
-
 export const sendEmail = async(formData : FormData) => {
-    'use server'
-
     const senderEmail = formData.get('senderEmail'); 
     const contactMessage = formData.get('contactMessage');
 
@@ -23,24 +19,26 @@ export const sendEmail = async(formData : FormData) => {
       }
     }
     
-    if(!validateData(contactMessage, 1000)){
+    if(!validateData(contactMessage, 5000)){
       return {
         error : 'Invalid contact message.'
       }
     }
 
     try {
+      console.log('sender email : ' + senderEmail);
+      console.log('contact message : ' + contactMessage);
+      
       resend.emails.send({
         from: 'Contact form  <onboarding@resend.dev>',
         to: 'bhadauria.shivam15@gmail.com',
         subject: 'Message from contact form of portfolio.',
         // text: contactMessage as string,
-        reply_to: senderEmail as string, 
+        reply_to: senderEmail as string,
         react : React.createElement(ContactFormEmail, {
-          message: contactMessage as string, 
+          contactMessage: contactMessage as string, 
           senderEmail : senderEmail as string, 
         })
-        // react: <ContactFormEmail message={contactMessage} senderEmail={senderEmail}/>
       });
     } catch (error : unknown) {
       return {
