@@ -30,14 +30,13 @@ function ThemeSwitch() {
         } else if(window.matchMedia('(prefers-color-scheme : dark)')){
             setTheme('dark')
             document.documentElement.classList.add('dark');
-
         }
     },[])
 
   return (
     <button className='fixed bottom-5 right-5 bg-gray-100 h-[2.5rem] w-[2.5rem] bg-opacity-40
      rounded-full backdrop-blur-lg border border-black/5 border-opacity-40 flex items-center justify-center
-     shadow-xl hover:scale-[1.15] active:scale-105 active:shadow-none transition-all'
+     shadow-xl hover:scale-[1.15] active:scale-105 active:shadow-none transition-all dark:bg-gray-800/60'
      onClick={toggleTheme}
      >
         {
