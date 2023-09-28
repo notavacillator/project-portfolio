@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsMoon, BsSun } from 'react-icons/bs'
 
 type Theme = "light" | "dark";
@@ -17,6 +17,15 @@ function ThemeSwitch() {
             window.localStorage.setItem('theme', 'light'); 
         }
     }
+
+    useEffect(() => {
+        const localTheme = window.localStorage.getItem('theme') as Theme | null ; 
+        if(localTheme){
+            setTheme(localTheme); 
+        } else if(window.matchMedia('(prefers-color-scheme : dark)')){
+            setTheme('dark')
+        }
+    },[])
 
   return (
     <button className='fixed bottom-5 right-5 bg-gray-100 h-[2.5rem] w-[2.5rem] bg-opacity-40
