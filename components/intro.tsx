@@ -78,19 +78,19 @@ function Intro() {
             <BsArrowRight className='opacity-80 group-hover:translate-x-3 transition'/>
           </Link>
 
-          <a href="/resume.pdf" download={true} className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full
+          <a href="/resume.pdf" download={true} className="group bg-white dark:bg-white/10 px-7 py-3 flex items-center gap-2 rounded-full
             outline-none focus:scale-105 hover:scale-105 hover:shadow-md active:scale-95 transition border border-black/10">
             Download Resume 
             <HiDownload className='group-hover:translate-y-1 transition'/>
           </a>
           
           <div className='flex md:gap-2 sm:gap-3 gap-5'>
-            <a href="https://linkedin.com/in/aman-bhadauria" target= "_blank" className='group bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full
+            <a href="https://linkedin.com/in/aman-bhadauria" target= "_blank" className='group bg-white dark:bg-white/10 dark:text-white p-4 text-gray-700 flex items-center gap-2 rounded-full
               outline-none focus:scale-105 hover:scale-110 hover:shadow-md active:scale-95 transition border border-black/10'>
               <BsLinkedin className='opacity-70 group-hover:opacity-100 group-hover:text-[#0072b1] transition sm:text-2xl text-3xl'/>
             </a>
 
-            <a href="https://github.com/notavacillator/" target= "_blank" className='group bg-white p-4 text-gray-700 text-[1.35rem] flex items-center gap-2 rounded-full
+            <a href="https://github.com/notavacillator/" target= "_blank" className='group bg-white dark:bg-white/10 dark:text-white p-4 text-gray-700 text-[1.35rem] flex items-center gap-2 rounded-full
               outline-none focus:scale-105 hover:scale-110 hover:shadow-md active:scale-95 transition border border-black/10'>
               <FaGithubSquare className='opacity-70 group-hover:opacity-100 group-hover:text-black transition sm:text-2xl text-3xl'/>
             </a>
