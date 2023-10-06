@@ -19,6 +19,7 @@ const  { pending } = useFormStatus();
             ) : (
                 <>
                   ${console.log("pending false" + pending)}
+                ${console.log("pending false" + pending)}
                     Submit 
                     <FaPaperPlane className='opacity-90 text-xs transition-all group-hover:translate-x-1 group-hover:-translate-y-1 duration-300 ease-out'/>
                 </>
