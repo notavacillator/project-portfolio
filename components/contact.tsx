@@ -56,7 +56,9 @@ function Contact() {
                 className = 'p-3 h-52 my-3 rounded-xl border border-black/10 \
                 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:outline-none' 
             />
-            <SubmitBtn/>
+            <div className='flex justify-end items-center'>
+                <SubmitBtn/>
+            </div>
         </form>
 
     </motion.section>

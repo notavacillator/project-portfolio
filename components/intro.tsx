@@ -24,7 +24,7 @@ function Intro() {
                 animate={{opacity: 1, scale: 1}}
                 transition={{type: 'tween', duration: 0.2}}
               >
-                <Image src = 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80' 
+                <Image src = {`/profpic.jpeg`} 
                   alt='profile-pic' 
                   height={192} 
                   width={204}
@@ -55,8 +55,8 @@ function Intro() {
          animate={{y: 0, opacity: 1}}>
           <span className="font-bold">Hello, I'm Aman Bhadauria.</span> I'm a{" "}
           <span className="font-bold">Software Developer</span> with{" "}
-          <span className="font-bold">2 years</span> of experience. I enjoy
-          building <span className="italic">sites & apps</span>. My focus is{" "}
+          <span className="font-bold">more than 2 years</span> of experience. I enjoy
+          building <span className="italic">pleasing web applications</span>. My focus is{" "}
           <span className="underline">React (Next.js)</span>.
         </motion.h1>
 
