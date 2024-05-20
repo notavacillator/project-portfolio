@@ -53,9 +53,9 @@ function Intro() {
         <motion.h1 className='mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-3xl'
          initial={{y: 100, opacity: 0}} 
          animate={{y: 0, opacity: 1}}>
-          <span className="font-bold">Hello, I'm Ricardo.</span> I'm a{" "}
-          <span className="font-bold">full-stack developer</span> with{" "}
-          <span className="font-bold">8 years</span> of experience. I enjoy
+          <span className="font-bold">Hello, I'm Aman Bhadauria.</span> I'm a{" "}
+          <span className="font-bold">Software Developer</span> with{" "}
+          <span className="font-bold">2 years</span> of experience. I enjoy
           building <span className="italic">sites & apps</span>. My focus is{" "}
           <span className="underline">React (Next.js)</span>.
         </motion.h1>
