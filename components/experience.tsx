@@ -9,7 +9,7 @@ import { useSectionInView } from '@/lib/hooks';
 import ThemeContextProvider, { useTheme } from '@/context/theme-context'
 
 const Experience : React.FC = () => {
-    const {ref} =  useSectionInView('Experience');
+    const {ref} =  useSectionInView('Experience', 0.1);
     const {theme} = useTheme(); 
     return (
     <section ref = {ref} id='experience' className='scroll-mt-28 mb-28 sm:mb-40'>
