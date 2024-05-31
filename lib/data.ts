@@ -3,7 +3,7 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import { HiOutlinePencil } from "react-icons/hi";
-import { HiOutlineDatabase } from "react-icons/hi"
+import { HiOutlineDatabase } from "react-icons/hi";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
@@ -17,10 +17,10 @@ export const links = [
     name: "About",
     hash: "#about",
   },
-  {
-    name: "Projects",
-    hash: "#projects",
-  },
+  // {
+  //   name: "Projects",
+  //   hash: "#projects",
+  // },
   {
     name: "Skills",
     hash: "#skills",
@@ -36,7 +36,7 @@ export const links = [
 ] as const;
 
 export const experiencesData = [
-  // Centium Consulting 
+  // Centium Consulting
   {
     title: "Software Engineer, Centium Consulting",
     location: "Pune, India",
@@ -45,7 +45,7 @@ export const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "2023 - Present",
   },
-  // CDAC 
+  // CDAC
   {
     title: "Advance Computing Student, C-DAC ACTS",
     location: "Pune, India",
@@ -117,16 +117,15 @@ export const skillsData = [
   "Node.js",
   "Git",
   "Tailwind",
-  'DaisyUI',
+  "DaisyUI",
   "MongoDB",
   "Redux",
   "Express",
   "Python",
   "Framer Motion",
-  'SuiteScript', 
-  'Firebase', 
-  'Appwrite', 
-  'Recharts', 
-  'Strapi',
-
+  "SuiteScript",
+  "Firebase",
+  "Appwrite",
+  "Recharts",
+  "Strapi",
 ] as const;
